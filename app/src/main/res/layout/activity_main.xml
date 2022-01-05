@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+    <EditText
+        android:id="@+id/editText_Nim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nim"
+        android:inputType="number"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="8dp" />
+    <EditText
+        android:id="@+id/editText_NamaLengkap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nama Lengkap"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/editText_Nim"
+        app:layout_constraintStart_toStartOf="@+id/editText_Nim"
+        app:layout_constraintTop_toBottomOf="@+id/editText_Nim" />
+    <EditText
+        android:id="@+id/editText_No_HP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="No. Handpohne"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/editText_NamaLengkap"
+        app:layout_constraintStart_toStartOf="@+id/editText_NamaLengkap"
+        app:layout_constraintTop_toBottomOf="@+id/editText_NamaLengkap" />
+    <EditText
+        android:id="@+id/editText_Alamat"
+        android:layout_width="match_parent"
+        android:layout_height="107dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Alamat"
+        android:inputType="textMultiLine|textPostalAddress"
+        app:layout_constraintEnd_toEndOf="@+id/editText_No_HP"
+        app:layout_constraintStart_toStartOf="@+id/editText_No_HP"
+        app:layout_constraintTop_toBottomOf="@+id/editText_No_HP" />
+    <TextView
+        android:id="@+id/jk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jenis Kelamin :"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="@+id/editText_Alamat"
+        app:layout_constraintTop_toBottomOf="@+id/editText_Alamat" />
+    <RadioGroup
+        android:id="@+id/radioGroup3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/jk"
+        app:layout_constraintTop_toTopOf="@+id/jk">
+        <RadioButton
+            android:id="@+id/radioButton_L"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Laki-Laki" />
+        <RadioButton
+            android:id="@+id/radioButton_P"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perempuan" />
+    </RadioGroup>
+    <TextView
+        android:id="@+id/statu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_weight="1"
+        android:text="Status :"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="@+id/jk"
+        app:layout_constraintTop_toBottomOf="@+id/jk" />
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mahasiswa"
+        app:layout_constraintStart_toStartOf="@+id/radioGroup3"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup3" />
+    <TextView
+        android:id="@+id/jur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:text="Jurusan :"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="@+id/statu"
+        app:layout_constraintTop_toBottomOf="@+id/statu" />
+    <Spinner
+        android:id="@+id/jurusan"
+        android:layout_width="220dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="12dp"
+        android:entries="@array/jurusan"
+        app:layout_constraintStart_toStartOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+    <TextView
+        android:id="@+id/angk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:text="Angkatan :"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jur" />
+    <Spinner
+        android:id="@+id/angkatan"
+        android:layout_width="220dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="12dp"
+        android:entries="@array/angkatan"
+        app:layout_constraintStart_toStartOf="@+id/jurusan"
+        app:layout_constraintTop_toBottomOf="@+id/jurusan" />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="217dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="12dp"
+        android:text="Save"
+        app:layout_constraintStart_toStartOf="@+id/angk"
+        app:layout_constraintTop_toBottomOf="@+id/angk" />
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:text="CLEAR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/angkatan" />
+    <Button
+        android:id="@+id/tampildata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tampilkan Data"
+        app:layout_constraintEnd_toEndOf="@+id/clear"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+</androidx.constraintlayout.widget.ConstraintLayout>
